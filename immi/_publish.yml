@@ -1,0 +1,4 @@
+- source: immi.qmd
+  quarto-pub:
+    - id: 8af2af73-63ed-4e8e-8078-19714b5a5dff
+      url: https://sharjeeljam.quarto.pub/immi
