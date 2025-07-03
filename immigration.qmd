@@ -41,7 +41,7 @@ title: "Fitted Model Example"
 format: html
 ---
 
-## Fitted Model Table
+
 
 ```{r}
 library(parsnip)
