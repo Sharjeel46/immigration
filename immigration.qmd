@@ -35,12 +35,43 @@ $$
 $$
 
 
+title: "Fitted Model Example"
+format: html
+---
 
+## Fitted Model Table
 
+```{r}
+library(parsnip)
+library(broom)
+library(gt)
+
+# Fit the model
+fit_att <- linear_reg(engine= "lm") |> fit(att_end ~ treatment, data = trains)
+
+# Tidy and display a formatted table
+tidy(fit_att, conf.int = TRUE) |>
+  select(term, estimate, conf.low, conf.high) |>
+  mutate(term = recode(term,
+                       "(Intercept)" = "Intercept",
+                       "treatmentTreated" = "Treatment (Treated)")) |>
+  gt() |>
+  tab_header(
+    title = "Regression Estimates with 95% Confidence Intervals"
+  ) |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    conf.low = "95% CI Lower",
+    conf.high = "95% CI Upper"
+  ) |>
+  fmt_number(columns = c(estimate, conf.low, conf.high), decimals = 2)
 
 ```
 
 ```
 
+```
 
-We examine how exposure to Spanish speakers influences immigration attitudes among Georgia voters today, using insights from a 2012 experiment on Boston commuters.However, a potential weakness in our model is that the Boston sample may not be representative of Georgia voters, which could bias our estimates of the treatment effect.
+
+We examine how exposure to Spanish speakers influences immigration attitudes among Georgia voters today, using insights from a 2012 experiment on Boston commuters.However, a potential weakness in our model is that the Boston sample may not be representative of Georgia voters, which could bias our estimates of the treatment effect.We model immigration attitudes—measured on a numerical scale—as a linear function of exposure to Spanish speakers, based on whether participants received the treatment or not.
