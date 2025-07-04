@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "immigration",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "immigration/index.html",
+    "href": "immigration/index.html",
+    "title": "immigration",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "immigration/about.html",
+    "href": "immigration/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "immigration/immigration.html",
+    "href": "immigration/immigration.html",
+    "title": "xx",
+    "section": "",
+    "text": "# A tibble: 2 × 7\n  term        estimate std.error statistic  p.value conf.low conf.high\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    9.69      0.398     24.3  9.22e-47     8.90   10.5   \n2 sexMale       -0.983     0.533     -1.84 6.79e- 2    -2.04    0.0735\n\\[\nY = \\beta_0 +\n```\\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k + \\varepsilon\n\\]"
+  },
+  {
+    "objectID": "immigration/immigration.html#fitted-model",
+    "href": "immigration/immigration.html#fitted-model",
+    "title": "xx",
+    "section": "Fitted Model",
+    "text": "Fitted Model\n\\[\n\\hat{Y} = 5.2 - 0.8 \\cdot \\text{station}\n\\]\ntitle: “Fitted Model Example” format: html —\n\n\n\n\n\n\n\n\nRegression Estimates with 95% Confidence Intervals\n\n\nTerm\nEstimate\n95% CI Lower\n95% CI Upper\n\n\n\n\nIntercept\n8.45\n7.77\n9.14\n\n\nTreatment (Treated)\n1.55\n0.51\n2.58"
+  },
+  {
+    "objectID": "immigration/immigration.html#visualization-of-treatment-effect",
+    "href": "immigration/immigration.html#visualization-of-treatment-effect",
+    "title": "xx",
+    "section": "Visualization of Treatment Effect",
+    "text": "Visualization of Treatment Effect\n\n\n\n\n\n\n\n\n\n```\nWe examine how exposure to Spanish speakers influences immigration attitudes among Georgia voters today, using insights from a 2012 experiment on Boston commuters.However, a potential weakness in our model is that the Boston sample may not be representative of Georgia voters, which could bias our estimates of the treatment effect.We model immigration attitudes—measured on a numerical scale—as a linear function of exposure to Spanish speakers, based on whether participants received the treatment or not.On average, exposure to Spanish speakers increases immigration attitude scores by 1.55 points, with a 95% confidence interval ranging from 0.51 to 2.58, indicating a statistically significant positive effect.aa"
+  },
+  {
+    "objectID": "immigration.html",
+    "href": "immigration.html",
+    "title": "xx",
+    "section": "",
+    "text": "# A tibble: 2 × 7\n  term        estimate std.error statistic  p.value conf.low conf.high\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 (Intercept)    9.69      0.398     24.3  9.22e-47     8.90   10.5   \n2 sexMale       -0.983     0.533     -1.84 6.79e- 2    -2.04    0.0735\n\\[\nY = \\beta_0 +\n```\\beta_1 X_1 + \\beta_2 X_2 + \\cdots + \\beta_k X_k + \\varepsilon\n\\]"
+  },
+  {
+    "objectID": "immigration.html#fitted-model",
+    "href": "immigration.html#fitted-model",
+    "title": "xx",
+    "section": "Fitted Model",
+    "text": "Fitted Model\n\\[\n\\hat{Y} = 5.2 - 0.8 \\cdot \\text{station}\n\\]\ntitle: “Fitted Model Example” format: html —\n\n\n\n\n\n\n\n\nRegression Estimates with 95% Confidence Intervals\n\n\nTerm\nEstimate\n95% CI Lower\n95% CI Upper\n\n\n\n\nIntercept\n8.45\n7.77\n9.14\n\n\nTreatment (Treated)\n1.55\n0.51\n2.58"
+  },
+  {
+    "objectID": "immigration.html#visualization-of-treatment-effect",
+    "href": "immigration.html#visualization-of-treatment-effect",
+    "title": "xx",
+    "section": "Visualization of Treatment Effect",
+    "text": "Visualization of Treatment Effect\n\n\n\n\n\n\n\n\n\n```\nWe examine how exposure to Spanish speakers influences immigration attitudes among Georgia voters today, using insights from a 2012 experiment on Boston commuters.However, a potential weakness in our model is that the Boston sample may not be representative of Georgia voters, which could bias our estimates of the treatment effect.We model immigration attitudes—measured on a numerical scale—as a linear function of exposure to Spanish speakers, based on whether participants received the treatment or not.On average, exposure to Spanish speakers increases immigration attitude scores by 1.55 points, with a 95% confidence interval ranging from 0.51 to 2.58, indicating a statistically significant positive effect.aa"
+  }
+]
