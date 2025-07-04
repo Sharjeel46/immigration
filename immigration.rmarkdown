@@ -1,0 +1,107 @@
+---
+title: "xx"
+format: html
+execute: 
+  echo: false
+---
+
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+library(tidymodels)
+library(broom)
+library(marginaleffects)
+
+
+linear_reg(engine= "lm") |>fit(att_end ~ sex, data = trains)|>tidy(conf.int = TRUE)
+
+
+
+
+
+
+```
+$$
+Y = \beta_0 + 
+```\beta_1 X_1 + \beta_2 X_2 + \cdots + \beta_k X_k + \varepsilon
+$$
+
+## Fitted Model
+
+$$
+\hat{Y} = 5.2 - 0.8 \cdot \text{station}
+$$
+
+
+title: "Fitted Model Example"
+format: html
+---
+
+
+
+```{r}
+library(parsnip)
+library(broom)
+library(gt)
+
+# Fit the model
+fit_att <- linear_reg(engine= "lm") |> fit(att_end ~ treatment, data = trains)
+
+# Tidy and display a formatted table
+tidy(fit_att, conf.int = TRUE) |>
+  select(term, estimate, conf.low, conf.high) |>
+  mutate(term = recode(term,
+                       "(Intercept)" = "Intercept",
+                       "treatmentTreated" = "Treatment (Treated)")) |>
+  gt() |>
+  tab_header(
+    title = "Regression Estimates with 95% Confidence Intervals"
+  ) |>
+  cols_label(
+    term = "Term",
+    estimate = "Estimate",
+    conf.low = "95% CI Lower",
+    conf.high = "95% CI Upper"
+  ) |>
+  fmt_number(columns = c(estimate, conf.low, conf.high), decimals = 2)
+
+```
+
+
+
+## Visualization of Treatment Effect
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+avg_comparisons(fit_att) |>
+  ggplot(aes(x = 1, y = estimate)) +
+  geom_pointrange(aes(ymin = conf.low, ymax = conf.high),
+                  size = 1.2,
+                  linewidth = 1.5,
+                  color = "#2E86AB") +
+  scale_y_continuous(breaks = seq(0, 3, 0.5), limits = c(0, 3)) +
+  labs(
+    title = "Causal Effect of Exposure to Spanish Speakers on Immigration Attitudes",
+    subtitle = "Exposure to Spanish speakers leads to more positive views on immigration",
+    caption = "Source: Enos (2012)",
+    y = "Effect (on 3 to 15 Scale)",
+    x = NULL
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    plot.title = element_text(size = 16, face = "bold"),
+    plot.subtitle = element_text(size = 13),
+    plot.caption = element_text(size = 10, color = "gray40"),
+    axis.title.y = element_text(size = 12)
+  )
+
+```
+```
+
+
+We examine how exposure to Spanish speakers influences immigration attitudes among Georgia voters today, using insights from a 2012 experiment on Boston commuters.However, a potential weakness in our model is that the Boston sample may not be representative of Georgia voters, which could bias our estimates of the treatment effect.We model immigration attitudes—measured on a numerical scale—as a linear function of exposure to Spanish speakers, based on whether participants received the treatment or not.On average, exposure to Spanish speakers increases immigration attitude scores by 1.55 points, with a 95% confidence interval ranging from 0.51 to 2.58, indicating a statistically significant positive effect.aa
